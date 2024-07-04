@@ -5,6 +5,14 @@ class Pokemon {
   final List<String> type;
   final int id;
 
+  Pokemon({
+    required this.name,
+    required this.image,
+    required this.num,
+    required this.type,
+    required this.id,
+  });
+
   factory Pokemon.fromMap(Map<String, dynamic> json) {
     return Pokemon(
         name: json['name'],
@@ -17,10 +25,4 @@ class Pokemon {
             .toList(),
         id: json['id']);
   }
-  Pokemon(
-      {required this.name,
-      required this.image,
-      required this.num,
-      required this.type,
-      required this.id});
 }

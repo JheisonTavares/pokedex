@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/shared/custom_app_bar.dart';
 
 import '../../../common/models/pokemon.dart';
 
@@ -9,18 +10,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Pokedex',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      appBar: const CustomAppBar(),
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          
         ),
-        backgroundColor: const Color.fromARGB(255, 147, 33, 33),
-      ),
-      body: ListView.builder(
         itemCount: list.length,
-        itemBuilder: (BuildContext context, int index) => ListTile(
-          title: Text(list[index].name),
-        ),
+        itemBuilder: (BuildContext context, int index) {
+          return InkWell( onTap: () {
+            
+          },
+            child: Card(
+              child: ListTile(title: Text(list[index].name)),
+            ),
+          );
+        },
       ),
     );
   }
