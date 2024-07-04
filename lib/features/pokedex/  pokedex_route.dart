@@ -11,14 +11,12 @@ class PokedexRoute extends StatelessWidget {
     return Navigator(
       initialRoute: '/',
       onGenerateRoute: (settings) {
-        if (settings.name == '/') {
+        if (settings.name == '/') {}
           return MaterialPageRoute(
             builder: (context) {
               return HomeContainer(repository: repository);
             },
           );
-        }
-        return null;
       },
     );
   }
