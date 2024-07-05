@@ -3,8 +3,8 @@ import 'package:flutter_pokedex/common/errors/failure.dart';
 import 'package:flutter_pokedex/common/repositories/pokemon_repository.dart';
 
 import '../../../../../common/models/pokemon.dart';
-import '../pages/home_error.dart';
-import '../pages/home_loading.dart';
+import '../../../../../shared/page_error.dart';
+import '../../../../../shared/page_loading.dart';
 import '../pages/home_page.dart';
 
 class HomeContainer extends StatelessWidget {
@@ -17,7 +17,7 @@ class HomeContainer extends StatelessWidget {
       future:repository.getAllPokemons(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const HomeLoading(
+          return const PageLoading(
           );
         }
         if (snapshot.connectionState == ConnectionState.done &&
@@ -26,7 +26,7 @@ class HomeContainer extends StatelessWidget {
           );
         }
         if (snapshot.hasError) {
-          return HomeError(error: (snapshot.error as Failure).message!,
+          return PageError(error: (snapshot.error as Failure).message!,
           );
         }
         return Container();

@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         home: PokedexRoute(
           repository: PokemonRepository(
             dio: Dio(),
-          ),
+          ), 
         )
 
         /*HomeContainer(

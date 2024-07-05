@@ -4,8 +4,8 @@ import 'package:flutter_pokedex/features/pokedex/screens/details/pages/detail_pa
 import '../../../../../common/errors/failure.dart';
 import '../../../../../common/models/pokemon.dart';
 import '../../../../../common/repositories/pokemon_repository.dart';
-import '../../home/pages/home_error.dart';
-import '../../home/pages/home_loading.dart';
+import '../../../../../shared/page_error.dart';
+import '../../../../../shared/page_loading.dart';
 
 class DetailContainer extends StatelessWidget {
   const DetailContainer({super.key, required this.repository});
@@ -17,7 +17,7 @@ final IPokemonRepository repository;
       future:repository.getAllPokemons(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const HomeLoading(
+          return const PageLoading(
           );
         }
         if (snapshot.connectionState == ConnectionState.done &&
@@ -25,7 +25,7 @@ final IPokemonRepository repository;
           return const DetailPage(name: 'name');
         }
         if (snapshot.hasError) {
-          return HomeError(error: (snapshot.error as Failure).message!,
+          return PageError(error: (snapshot.error as Failure).message!,
           );
         }
         return Container();
