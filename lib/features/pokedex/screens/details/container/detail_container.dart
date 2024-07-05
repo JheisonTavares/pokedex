@@ -16,18 +16,23 @@ final IPokemonRepository repository;
     return FutureBuilder<List<Pokemon>>(
       future:repository.getAllPokemons(),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
+        if (snapshot.connectionState == ConnectionState.waiting)
+         {
           return const PageLoading(
           );
         }
+
         if (snapshot.connectionState == ConnectionState.done &&
             snapshot.hasData) {
-          return const DetailPage(name: 'name');
+          return const DetailPage(name: 'name',
+          );
         }
+
         if (snapshot.hasError) {
           return PageError(error: (snapshot.error as Failure).message!,
           );
         }
+
         return Container();
       },     
     );

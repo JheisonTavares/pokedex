@@ -8,8 +8,13 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.brown,
+        title: const Text("Details"),
+      ),
       body: Center(
-        child: Text(name),
+        child: ElevatedButton(onPressed: (){Navigator.pop(context);}, child: const Text("Go Back"),
+        ),
       ),
     );
   }

@@ -6,14 +6,15 @@ class CustomCard extends StatefulWidget {
   @override
   CustomCardState createState() => CustomCardState();
 }
+
 class CustomCardState extends State<CustomCard> {
   bool isTapped = false;
 
-void _handleTap() {
-  setState(() {
-    isTapped = !isTapped;
-  });
-}
+  void _handleTap() {
+    setState(() {
+      isTapped = !isTapped;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ void _handleTap() {
                   color: isTapped ? Colors.white : Colors.black,
                   fontSize: 20,
                 ),
-                 ),
+              ),
               const SizedBox(height: 10),
               Icon(
                 isTapped ? Icons.check_circle : Icons.touch_app,
@@ -40,9 +41,9 @@ void _handleTap() {
                 size: 40,
               ),
             ],
+          ),
         ),
       ),
-    ),
     );
   }
-  }
+}

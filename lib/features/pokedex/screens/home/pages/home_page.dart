@@ -14,15 +14,17 @@ class HomePage extends StatelessWidget {
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          
         ),
         itemCount: list.length,
         itemBuilder: (BuildContext context, int index) {
-          return InkWell( onTap: () {
-           
-          },
+          return InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, "/details");
+            },
             child: Card(
-              child: ListTile(title: Text(list[index].name)),
+              child: ListTile(
+                title: Text(list[index].name),
+              ),
             ),
           );
         },
