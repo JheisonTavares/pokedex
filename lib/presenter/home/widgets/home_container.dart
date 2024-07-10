@@ -1,11 +1,12 @@
+
 import 'package:flutter/material.dart';
 
-import '../../../../../common/errors/failure.dart';
-import '../../../../../common/models/pokemon.dart';
-import '../../../../../common/repositories/pokemon_repository.dart';
-import '../../../../../shared/page_error.dart';
-import '../../../../../shared/page_loading.dart';
-import '../pages/home_page.dart';
+import '../../../common/errors/failure.dart';
+import '../../../common/models/pokemon.dart';
+import '../../../common/repositories/pokemon_repository.dart';
+import '../../../shared/page_error.dart';
+import '../../../shared/page_loading.dart';
+import '../home_page.dart';
 
 class HomeContainer extends StatelessWidget {
   const HomeContainer({super.key, required this.repository});
