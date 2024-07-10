@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokedex/shared/custom_app_bar.dart';
 
 import '../../../../../common/models/pokemon.dart';
+import '../../../../../shared/custom_app_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key, required this.list});
@@ -22,8 +22,10 @@ class HomePage extends StatelessWidget {
               Navigator.pushNamed(context, "/details");
             },
             child: Card(
-              child: ListTile(
-                title: Text(list[index].name),
+              child: Center(
+                child: ListTile(
+                  title: Text(list[index].name),
+                ),
               ),
             ),
           );

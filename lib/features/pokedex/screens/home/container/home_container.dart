@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokedex/common/errors/failure.dart';
-import 'package:flutter_pokedex/common/repositories/pokemon_repository.dart';
 
+import '../../../../../common/errors/failure.dart';
 import '../../../../../common/models/pokemon.dart';
+import '../../../../../common/repositories/pokemon_repository.dart';
 import '../../../../../shared/page_error.dart';
 import '../../../../../shared/page_loading.dart';
 import '../pages/home_page.dart';
