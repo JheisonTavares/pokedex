@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/features/pokedex/screens/details/pages/detail_page.dart';
+import 'package:flutter_pokedex/features/pokedex/screens/home/home_page.dart';
 
 import '../../common/repositories/pokemon_repository.dart';
-import 'screens/details/container/detail_container.dart';
-import 'screens/home/container/home_container.dart';
 
 class PokedexRoute extends StatelessWidget {
   const PokedexRoute({super.key, required this.repository});
   final PokemonRepository repository;
-  
+
   @override
   Widget build(BuildContext context) {
     return Navigator(
       initialRoute: '/',
-     onGenerateRoute: (settings) {
-       if (settings.name == '/') {
-        return MaterialPageRoute(
-          builder: (context) {
-            return HomeContainer(repository: repository);
-          },
-        );
-     }
-        
-          if (settings.name == '/details') {
+      onGenerateRoute: (settings) {
+        if (settings.name == '/') {
           return MaterialPageRoute(
             builder: (context) {
-              return DetailContainer(repository: repository);
+              return const HomePage();
             },
           );
         }
-          return null;
+
+        if (settings.name == '/details') {
+          return MaterialPageRoute(
+            builder: (context) {
+              return const DetailPage(
+                list: [],
+              );
+            },
+          );
+        }
+        return null;
       },
     );
   }

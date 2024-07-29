@@ -24,12 +24,6 @@ class MyApp extends StatelessWidget {
             dio: Dio(),
           ), 
         )
-
-        /*HomeContainer(
-        repository: PokemonRepository(
-          dio: Dio(),
-        ),
-      ),*/
         );
   }
 }
