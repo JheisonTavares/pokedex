@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../shared/custom_app_bar.dart';
+import '../../shared/custom_app_bar.dart';
 import 'widgets/home_body.dart';
 
 class HomePage extends StatelessWidget {

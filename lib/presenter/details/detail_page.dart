@@ -8,18 +8,9 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: list.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            child: Center(
-              child: ListTile(
-                title: Text(list[index].name),
-              ),
-            ),
-          );
-        }
-    ),
+      appBar: AppBar(
+        title: const Text('test'),
+      ),
     );
   }
   }

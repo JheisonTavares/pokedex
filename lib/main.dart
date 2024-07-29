@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import 'common/repositories/pokemon_repository.dart';
-import 'features/pokedex/pokedex_route.dart';
+import 'presenter/pokedex/pokedex_route.dart';
 
 void main() {
   runApp(const MyApp());

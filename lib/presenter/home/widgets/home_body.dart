@@ -3,8 +3,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../common/controllers/home_controller.dart';
-import '../../../../../common/repositories/pokemon_repository.dart';
+import '../../../common/controllers/home_controller.dart';
+import '../../../common/repositories/pokemon_repository.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({super.key});
@@ -30,12 +30,18 @@ class _HomeBodyState extends State<HomeBody> {
 
   @override
   Widget build(BuildContext context) {
-    return  ListView.builder(
+    return  GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+      ),
         itemCount: _controller.pokemons.length,
         itemBuilder: (context, index) {
           final pokemon = _controller.pokemons[index];
-          return ListTile(
-            title: Text(pokemon.name),
+          return InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed('/details', arguments: pokemon);
+            },
+            child: Center(child: Text(pokemon.name)),
           );
         },
       );
