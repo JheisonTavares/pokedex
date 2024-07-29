@@ -32,16 +32,29 @@ class _HomeBodyState extends State<HomeBody> {
   Widget build(BuildContext context) {
     return  GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
+        crossAxisCount: 2,
       ),
-        itemCount: _controller.pokemons.length,
+        itemCount: 32,
         itemBuilder: (context, index) {
           final pokemon = _controller.pokemons[index];
-          return InkWell(
+          return  InkWell(
+            splashColor: Colors.green[100],
             onTap: () {
               Navigator.of(context).pushNamed('/details', arguments: pokemon);
             },
-            child: Center(child: Text(pokemon.name)),
+            child: Center(
+              child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+              Image.network(pokemon.image),
+              const SizedBox(height: 15),
+              Text(
+                pokemon.name,
+                style: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                )
+                ],
+              ),
+            ),
           );
         },
       );

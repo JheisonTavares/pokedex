@@ -7,13 +7,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: const Text(
-        'Pokedex',
+        'Pokedex ',
         style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
       ),
-      backgroundColor: const Color.fromARGB(255, 147, 33, 33),
+      backgroundColor: const Color.fromARGB(255, 209, 33, 33),
     );
   }
 

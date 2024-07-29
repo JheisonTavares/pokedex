@@ -25,7 +25,6 @@ class PokedexRoute extends StatelessWidget {
           return MaterialPageRoute(
             builder: (context) {
               return const DetailPage(
-                list: [],
               );
             },
           );
