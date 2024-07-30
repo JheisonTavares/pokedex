@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
+import '../../common/models/pokemon.dart';
 import 'widgets/details_body.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+  final Pokemon pokemon;
+
+  const DetailPage({super.key, required this.pokemon});
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Details'),
-      ),
-        body: const DetailsBody()
+        body: DetailsBody(pokemon: pokemon,),
       );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/presenter/details/detail_page.dart';
 import 'package:flutter_pokedex/presenter/home/home_page.dart';
 
+import '../../common/models/pokemon.dart';
 import '../../common/repositories/pokemon_repository.dart';
 
 class PokedexRoute extends StatelessWidget {
@@ -24,7 +25,7 @@ class PokedexRoute extends StatelessWidget {
         if (settings.name == '/details') {
           return MaterialPageRoute(
             builder: (context) {
-              return const DetailPage(
+              return DetailPage(pokemon: settings.arguments as Pokemon,
               );
             },
           );
