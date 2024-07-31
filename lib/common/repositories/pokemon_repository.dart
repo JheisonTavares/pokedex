@@ -16,7 +16,6 @@ class PokemonRepository implements IPokemonRepository {
 
   @override
   Future<List<Pokemon>> getAllPokemons() async {
-    print('getAllPokemons');
     try {
       final response = await dio.get(ApiConsts.apiAllPokemons);
       final json = jsonDecode(response.data) as Map<String, dynamic>;
