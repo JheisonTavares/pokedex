@@ -6,9 +6,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      actions: [
-        ElevatedButton(onPressed: () {}, child: const Icon(Icons.logout_outlined))
-      ],
+    
       centerTitle: true,
       title: const Text(
         'Pokedex ',

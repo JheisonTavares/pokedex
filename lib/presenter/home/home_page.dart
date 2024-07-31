@@ -15,6 +15,6 @@ class HomePage extends StatelessWidget {
         appBar: CustomAppBar(),
         body: HomeBody(),
       ),
-    );
+      );
   }
 }

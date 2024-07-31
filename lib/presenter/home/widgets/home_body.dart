@@ -43,39 +43,52 @@ class _HomeBodyState extends State<HomeBody> {
       itemBuilder: (context, index) {
         final pokemon = _controller.pokemons[index];
         
-        return Container(
-        //  margin: const EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 3),
-          child: Card(
-            margin: const EdgeInsets.only(left: 2, right: 2, top: 1, bottom: 5),
-            color: const Color.fromARGB(73, 0, 94, 255),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(17),
-              side: const BorderSide(color: Colors.black, width: 2),
-            ),
-            child: InkWell(
-              splashColor: const Color.fromARGB(255, 10, 2, 78),
-              onTap: () {
-                Navigator.of(context).pushNamed('/details', arguments: pokemon);
-              },
-              child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image.network(pokemon.image),
-                    const SizedBox(height: 20),
-                    Text(
-                      pokemon.name,
-                      style: const TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+       return InkWell(
+         splashColor: const Color.fromARGB(255, 10, 2, 78),
+         onTap: () {
+           Navigator.of(context).pushNamed('/details', arguments: pokemon);
+         },
+         child: Padding(
+           padding: const EdgeInsets.only(left: 1, right: 1, top: 3, bottom: 5),
+           child: DecoratedBox(
+             decoration: const BoxDecoration(
+              boxShadow:  [
+                BoxShadow(
+                  color: Color.fromARGB(255, 72, 61, 61),
+                  spreadRadius: 1,
+                  blurRadius: 10,
+                  offset: Offset(0, 4),
                 ),
-              ),
-            ),
-          ),
-        );
+              ],
+               gradient: LinearGradient(colors: [
+                 Color.fromARGB(255, 54, 165, 255),
+                 Color.fromARGB(255, 13, 0, 127),
+                 Color.fromARGB(184, 25, 21, 51),
+               ],
+               begin: Alignment.topCenter,
+               end: Alignment.bottomCenter
+               ),
+               borderRadius: BorderRadius.all(Radius.circular(22)),
+             ),
+             child: Column(
+               crossAxisAlignment: CrossAxisAlignment.center,
+               children: [
+                 Image.network(pokemon.image, width: 150,),
+                 const SizedBox(height: 3),
+                 Text(
+                   pokemon.name,
+                   style: const TextStyle(
+                    color: Color.fromARGB(255, 190, 205, 255),
+                     fontSize: 22,
+                     fontWeight: FontWeight.bold,
+                   ),
+                 ),
+               ],
+             ),
+           ),
+         ),
+         
+       );
       },
     );
   }
