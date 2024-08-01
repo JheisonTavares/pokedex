@@ -12,11 +12,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         'Pokedex ',
         
         style: TextStyle(
-          color: Colors.black,
+          color: Color.fromARGB(255, 186, 197, 255),
           fontWeight: FontWeight.bold,
         ),
       ),
-      backgroundColor: const Color.fromARGB(238, 255, 32, 32),
+       backgroundColor: const Color.fromARGB(236, 10, 1, 77),
     );
   }
 

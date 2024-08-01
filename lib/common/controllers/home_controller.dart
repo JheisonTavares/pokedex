@@ -6,6 +6,7 @@ import '../repositories/pokemon_repository.dart';
 class PokemonController {
   final IPokemonRepository repository;
   List<Pokemon> pokemons = [];
+  
 
   PokemonController({required this.repository});
 
