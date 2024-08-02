@@ -25,7 +25,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _loadData() async {
-    print(isLoading);
     setState(() {
       isLoading = true;
     });
@@ -52,8 +51,13 @@ class _HomePageState extends State<HomePage> {
         body: HomeBody(
           pokemonsController: _controller,
         ),
-        floatingActionButton: FloatingActionButton(
-            onPressed: _loadData, child: const Icon(Icons.refresh)),
+        floatingActionButton: SizedBox(
+          width: 50,
+          height: 50,
+          child: FloatingActionButton(
+            backgroundColor: const Color.fromARGB(115, 13, 71, 232),
+              onPressed: _loadData, elevation: 10, child: const Icon(Icons.refresh, size: 30,color: Colors.white,) ,),
+        ),
       ),
     );
   }

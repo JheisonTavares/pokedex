@@ -50,6 +50,7 @@ class _DetailsBodyState extends State<DetailsBody> {
             color: Color.fromARGB(255, 186, 197, 255),
           ),
         ),
+        
       ),
       body: Padding(
         padding: const EdgeInsets.all(4.0),
