@@ -1,3 +1,5 @@
+
+
 class Pokemon {
   final String name;
   final String image;
@@ -6,8 +8,10 @@ class Pokemon {
   final int id;
   final String height;
   final String? weight;
+  final List<String> weaknesses;
 
   Pokemon({
+    required this.weaknesses, 
     required this.name,
     required this.image,
     required this.num,
@@ -19,6 +23,7 @@ class Pokemon {
 
   factory Pokemon.fromMap(Map<String, dynamic> json) {
     return Pokemon(
+        weaknesses: List<String>.from(json['weaknesses']),
         name: json['name'],
         image: json['img'],
         num: json['num'],
