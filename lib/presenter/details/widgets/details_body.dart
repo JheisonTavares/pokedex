@@ -32,7 +32,6 @@ class _DetailsBodyState extends State<DetailsBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    
       backgroundColor: const Color.fromARGB(216, 51, 58, 93),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(236, 10, 1, 77),
@@ -50,7 +49,6 @@ class _DetailsBodyState extends State<DetailsBody> {
             color: Color.fromARGB(255, 186, 197, 255),
           ),
         ),
-        
       ),
       body: Padding(
         padding: const EdgeInsets.all(4.0),
@@ -193,9 +191,12 @@ class _DetailsBodyState extends State<DetailsBody> {
                         Align(
                           alignment: Alignment.center,
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 20.0, top: 4.0),
+                            padding:
+                                const EdgeInsets.only(left: 20.0, top: 4.0),
                             child: Text(
-                              widget.pokemon.weaknesses.toString() ,style: const TextStyle(fontWeight: FontWeight.bold),
+                              widget.pokemon.weaknesses.toString(),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
@@ -204,6 +205,16 @@ class _DetailsBodyState extends State<DetailsBody> {
                   ),
                 ),
               ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.yellow,
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            
+              child: const Text('Back'),
             )
           ],
         ),
